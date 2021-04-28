@@ -5,7 +5,9 @@ var held_object = null
 func _ready():
 	#for node in get_tree().get_nodes_in_group("pickable"):
 	#	node.connect("clicked", self, "_on_pickable_clicked")
-	get_node("Bread/RigidBody2D").connect("clicked", self, "_on_pickable_clicked")
+	get_node("Bread/Slice").connect("clicked", self, "_on_pickable_clicked")
+	get_node("Bread/Slice2").connect("clicked", self, "_on_pickable_clicked")
+	get_node("Bread/Slice3").connect("clicked", self, "_on_pickable_clicked")
 
 func _on_pickable_clicked(object):
 	if !held_object:

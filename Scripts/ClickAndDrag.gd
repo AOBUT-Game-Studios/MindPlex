@@ -14,6 +14,7 @@ func _physics_process(delta):
 	if held:
 		global_transform.origin = get_global_mouse_position()
 		
+		
 func pickup():
 	if held:
 		return
@@ -21,12 +22,15 @@ func pickup():
 	held = true
 	originpos = global_transform.origin
 	global_transform.origin = get_global_mouse_position()
-	get_node("CollisionShape2D").global_transform.origin  = originpos
+	#get_node("CollisionShape2D").global_transform.origin  = originpos
 	
 func drop(impulse=Vector2.ZERO):
 	if held:
 		#mode = RigidBody2D.MODE_RIGID
 		#apply_central_impulse(impulse)
 		held = false
-		global_transform.origin = get_node("CollisionShape2D").global_transform.origin
-		get_node("CollisionShape2D").global_transform.origin = global_transform.origin
+		#global_transform.origin = get_node("CollisionShape2D").transform.origin
+		#get_node("CollisionShape2D").position = Vector2()
+
+		
+	

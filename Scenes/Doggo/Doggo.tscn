@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 115.603
+height = 223.301
+
+[node name="Doggo" type="Node2D"]
+position = Vector2( 504.111, 462.977 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
