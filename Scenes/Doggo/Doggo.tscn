@@ -1,15 +1,43 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
-[sub_resource type="CapsuleShape2D" id=1]
-radius = 115.603
-height = 223.301
+[ext_resource path="res://Scripts/Doggo.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Doggo/Doggo.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Happ"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 130.467, 165.413 )
 
 [node name="Doggo" type="Node2D"]
-position = Vector2( 504.111, 462.977 )
+position = Vector2( 505.446, 412.253 )
+script = ExtResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -5.66327, 9.43875 )
+texture = ExtResource( 2 )
+hframes = 5
+frame = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Happ = SubResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 1 )
+position = Vector2( -11.3393, 61.7362 )
+shape = SubResource( 2 )
