@@ -20,8 +20,9 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 130.467, 165.413 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 61.2681
+height = 108.585
 
 [node name="Doggo" type="Node2D"]
 position = Vector2( 505.446, 412.253 )
@@ -39,5 +40,6 @@ anims/Happ = SubResource( 1 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( -11.3393, 61.7362 )
+position = Vector2( -15.0851, -38.6504 )
+rotation = 1.5708
 shape = SubResource( 2 )

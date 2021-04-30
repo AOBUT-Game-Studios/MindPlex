@@ -2,9 +2,12 @@ extends Area2D
 
 export (float) var lifetime = 3.2
 var lethal = false
+var rng = RandomNumberGenerator.new()
 
 func _ready():
 	$AnimationPlayer.play("Flash")
+	rng.randomize()
+	global_position = Vector2(rng.randf_range(100, 924), rng.randf_range(50, 550))
 	
 func _process(delta):
 	lifetime -= delta
