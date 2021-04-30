@@ -1,6 +1,6 @@
 extends Area2D
 export(int) var sus_detect = -1
-#var rng = RandomNumberGenerator.new()
+
 var amog_position
 var amog_slot
 
